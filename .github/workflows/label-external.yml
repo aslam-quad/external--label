@@ -41,9 +41,9 @@ jobs:
             echo "internal=false" >> $GITHUB_OUTPUT
           fi
  
-     - name: Add external label
-       if: steps.check_author.outputs.internal == 'false' || github.event.pull_request.head.repo.full_name != github.repository
-       uses: actions-ecosystem/action-add-labels@v1
-       with:
-         labels: external
+    - name: Add external label
+      if: steps.check_author.outputs.internal == 'false' || github.event.pull_request.head.repo.full_name != github.repository
+      uses: actions-ecosystem/action-add-labels@v1
+      with:
+        labels: external
 
